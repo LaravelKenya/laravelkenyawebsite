@@ -1,0 +1,166 @@
+a {
+  color: #fbc02d;
+}
+a:hover,
+a:focus {
+  color: #fbc02d;
+}
+.btn-common {
+  background-color: #fbc02d;
+}
+.slicknav_btn {
+  background-color: #fbc02d;
+}
+.section-title:before,
+.section-title:after {
+  color: #fbc02d;
+}
+.navbar li.active a.nav-link {
+  color: #fbc02d !important;
+}
+.top-nav-collapse .navbar-nav li.active a.nav-link {
+  color: #fbc02d !important;
+}
+.navbar-expand-lg .navbar-nav li > a:before {
+  background: #fbc02d;
+}
+.navbar-expand-lg .navbar-nav .nav-link:focus,
+.navbar-expand-lg .navbar-nav .nav-link:hover {
+  color: #fbc02d !important;
+}
+#hero-area .contents .icon i {
+  color: #fbc02d;
+}
+#count .count-wrapper {
+  background: #fbc02d;
+}
+.about-content ul li i {
+  color: #fbc02d;
+}
+.ready-to-play:before {
+  background: #fbc02d;
+}
+#information-bar ul li i {
+  color: #fbc02d;
+}
+.single-intro-text .count-number {
+  background: #fbc02d;
+}
+.single-intro-text:hover i {
+  color: #fbc02d;
+}
+.counter-section .counter .icon {
+  background: #fbc02d;
+}
+.schedule .nav-tabs .nav-item.show .nav-link,
+.schedule .nav-tabs .nav-link.active,
+.schedule .nav-tabs .nav-item .nav-link:hover {
+  background: #fbc02d;
+}
+.schedule .nav-tabs .nav-item.show .nav-link:before,
+.schedule .nav-tabs .nav-link.active:before {
+  border-color: #fbc02d transparent transparent transparent;
+}
+.schedule .card .schedule-slot-time {
+  background: #fbc02d;
+}
+.schedule .card-body .location span {
+  color: #fbc02d;
+}
+.team-item .info-text h3 a:hover {
+  color: #fbc02d;
+}
+#gallery .gallery-box:hover .overlay-box {
+  background: rgba(251, 192, 45, 0.7);
+}
+#gallery .gallery-box .overlay-box i {
+  color: #fbc02d;
+}
+#event-up .event-item .content a {
+  color: #fbc02d;
+}
+#pricing .price-block-wrapper .price h2 {
+  color: #fbc02d;
+}
+#pricing .price-block-wrapper .pricing-list ul li i {
+  color: #fbc02d;
+}
+#pricing .active {
+  background: #fbc02d;
+}
+.blog-item .icon {
+  background-color: #fbc02d;
+}
+.blog-item .meta-tags span i {
+  color: #fbc02d;
+}
+.container-form .form-wrapper .form-control:focus {
+  border-color: #fbc02d;
+}
+#contact-text ul li i {
+  color: #fbc02d;
+}
+.subscribe-inner .form-control:focus {
+  border-color: #fbc02d;
+}
+.site-info a:hover {
+  color: #fbc02d;
+}
+a.back-to-top i {
+  background: #fbc02d;
+}
+.sk-circle .sk-child:before {
+  background-color: #fbc02d;
+}
+.page-header ul li {
+  color: #fbc02d;
+}
+.page-header ul li a:hover {
+  color: #fbc02d;
+}
+.blog-post .post-content .meta .meta-part a:hover {
+  color: #fbc02d;
+}
+.post-title a:hover {
+  color: #fbc02d;
+}
+#pagination .current {
+  color: #fbc02d;
+}
+#pagination a:hover {
+  color: #fbc02d;
+}
+.widget-search input[type="search"]:focus {
+  border-color: #fbc02d;
+}
+.widget-title {
+  border-color: #fbc02d;
+}
+#sidebar .posts-list .widget-content a:hover {
+  color: #fbc02d;
+}
+#sidebar .cat-list li a:hover {
+  color: #fbc02d;
+}
+.post-slide .post-content .meta .meta-part a:hover {
+  color: #fbc02d;
+}
+.post-slide .post-content h3 a:hover {
+  color: #fbc02d;
+}
+#sidebar .tag a:hover {
+  color: #fbc02d;
+  border-color: #fbc02d;
+}
+#comments .comment-content .comment-by a:hover {
+  color: #fbc02d;
+}
+#comments .comment-content .comment-date {
+  color: #fbc02d;
+}
+.reply-link {
+  color: #fbc02d;
+}
+.form-control:focus {
+  border-color: #fbc02d;
+}
