@@ -632,11 +632,11 @@ a.back-to-top:focus {
   padding-right: 0;
 }
 
-#page-banner-area {
-  background: url(../img/background/banner.jpg) no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
-}
+/*#page-banner-area {*/
+/*  background: url(../img/background/banner.jpg) no-repeat;*/
+/*  background-position: 50% 50%;*/
+/*  background-size: cover;*/
+/*}*/
 
 .page-banner {
   position: relative;
@@ -715,7 +715,6 @@ a.back-to-top:focus {
   animation-fill-mode: both;
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
-  background: #fff !important;
 }
 
 .top-nav-collapse .navbar-brand {
@@ -2982,19 +2981,7 @@ footer {
   background: #f6f9f9;
 }
 
-#count .count-wrapper {
-  background: $preset;
-  border-radius: 4px;
-  box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.08);
-  margin-bottom: -35px;
-  margin-top: -35px;
-  padding: 15px 0;
-  position: relative;
-  top: -40px;
-  z-index: 999;
-  display: inline-block;
-  width: 100%;
-}
+
 
 .time-count div {
   text-align: center;
@@ -3023,7 +3010,6 @@ footer {
   font-size: 60px;
   line-height: 45px;
   font-weight: 700;
-  letter-spacing: 0.3;
   font-family: "Roboto", sans-serif;
   display: block;
   color: #fff;
