@@ -13,13 +13,11 @@
                   <div class="icon">
                     <i class="lni-mic"></i>
                   </div>
-                  <p class="banner-info">15, Oct 2020 - Maria Hall, NY, United states</p>
-                  <h2 class="head-title">Developers Conference</h2>
+                  <h2 class="head-title">Laravel Kenya</h2>
                   <p class="banner-desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, nobis nesciunt atque perferendis, ipsa doloremque deserunt cum qui.</p>
-                  <div class="banner-btn">
-                    <a href="#" class="btn btn-common">Get Ticket</a>
-                  </div>
+                    Welcome to Laravel Kenya Community.
+                    Where Laravel And PHP Developers Connect, Collaborate and Learn Together
+                  </p>
                 </div>
               </div>
             </div>
@@ -27,7 +25,9 @@
         </div>
       </template>
     </LayoutHeader>
-    <slot />
+    <slot/>
+
+    <LayoutFooter/>
   </div>
 </template>
 
