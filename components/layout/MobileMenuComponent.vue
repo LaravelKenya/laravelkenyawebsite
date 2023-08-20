@@ -7,7 +7,7 @@ const mobileMenu = ref(false)
     <div class="slicknav_menu">
       <div class="slicknav_brand">
         <NuxtLink to="/">
-          <img alt="logo" class="img-responsive" src="assets/img/logo.png">
+          <img alt="logo" class="img-responsive" src="/assets/img/logo.png">
         </NuxtLink>
       </div>
       <button class="slicknav_btn slicknav_collapsed"

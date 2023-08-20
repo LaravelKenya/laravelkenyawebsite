@@ -10,7 +10,7 @@
         <div class="row">
           <div class="col-lg-6 col-md-12 col-xs-12">
             <div class="img-thumb">
-              <img alt="" class="img-fluid" src="assets/img/about/img1.png">
+              <img alt="" class="img-fluid" src="/assets/img/about/img1.png">
             </div>
           </div>
           <div class="col-lg-6 col-md-12 col-xs-12">

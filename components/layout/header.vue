@@ -22,7 +22,7 @@ onBeforeUnmount(() => {
     <nav :class="scrollingNavBarClass" class="navbar navbar-expand-lg bg-inverse fixed-top scrolling-navbar">
       <div class="container">
         <div class="theme-header clearfix">
-          <NuxtLink class="navbar-brand" href="/"><img alt="" src="assets/img/laravel.png"></NuxtLink>
+          <NuxtLink class="navbar-brand" href="/"><img alt="" src="/assets/img/laravel.png"></NuxtLink>
           <button aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
                   class="navbar-toggler"
                   data-target="#navbarCollapse" data-toggle="collapse" type="button">
