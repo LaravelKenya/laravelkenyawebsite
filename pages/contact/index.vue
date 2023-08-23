@@ -1,8 +1,12 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+useHead({
+  title: "Contact Us"
+})
+</script>
 
 <template>
   <div>
-    Page: foo
+    <LazyContact/>
   </div>
 </template>
 
