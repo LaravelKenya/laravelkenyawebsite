@@ -68,7 +68,7 @@
                         <div aria-controls="collapseOne" aria-expanded="false" class="collapsed card-header"
                              data-target="#collapseOne" data-toggle="collapse">
                           <div class="images-box">
-                            <img alt="" class="img-fluid" src="assets/img/speaker/speakers-1.jpg">
+                            <img alt="" class="img-fluid" src="/assets/img/speaker/speakers-1.jpg">
                           </div>
                           <h4>Web Design Principles and Best Practices</h4>
                           <h5 class="name">David Warner</h5>
@@ -97,7 +97,7 @@
                         <div aria-controls="collapseTwo" aria-expanded="false" class="collapsed card-header"
                              data-target="#collapseTwo" data-toggle="collapse">
                           <div class="images-box">
-                            <img alt="" class="img-fluid" src="assets/img/speaker/speakers-2.jpg">
+                            <img alt="" class="img-fluid" src="/assets/img/speaker/speakers-2.jpg">
                           </div>
                           <h4>15 Free Productive Design Tools</h4>
                           <h5 class="name">David Warner</h5>
@@ -125,7 +125,7 @@
                         <div aria-controls="collapseThree" aria-expanded="false" class="collapsed card-header"
                              data-target="#collapseThree" data-toggle="collapse">
                           <div class="images-box">
-                            <img alt="" class="img-fluid" src="assets/img/speaker/speakers-3.jpg">
+                            <img alt="" class="img-fluid" src="/assets/img/speaker/speakers-3.jpg">
                           </div>
                           <h4>Getting Started With SketchApp</h4>
                           <h5 class="name">David Warner</h5>
@@ -158,7 +158,7 @@
                         <div aria-controls="collapseTwo2" aria-expanded="false" class="collapsed card-header"
                              data-target="#collapseTwo2" data-toggle="collapse">
                           <div class="images-box">
-                            <img alt="" class="img-fluid" src="assets/img/speaker/speakers-2.jpg">
+                            <img alt="" class="img-fluid" src="/assets/img/speaker/speakers-2.jpg">
                           </div>
                           <h4>Web Design Principles and Best Practices</h4>
                           <h5 class="name">David Warner</h5>
@@ -187,7 +187,7 @@
                         <div aria-controls="collapseOne1" aria-expanded="false" class="collapsed card-header"
                              data-target="#collapseOne1" data-toggle="collapse">
                           <div class="images-box">
-                            <img alt="" class="img-fluid" src="assets/img/speaker/speakers-1.jpg">
+                            <img alt="" class="img-fluid" src="/assets/img/speaker/speakers-1.jpg">
                           </div>
                           <h4>Web Design Principles and Best Practices</h4>
                           <h5 class="name">David Warner</h5>
@@ -219,7 +219,7 @@
                         <div aria-controls="collapseOne3" aria-expanded="false" class="collapsed card-header"
                              data-target="#collapseOne3" data-toggle="collapse">
                           <div class="images-box">
-                            <img alt="" class="img-fluid" src="assets/img/speaker/speakers-1.jpg">
+                            <img alt="" class="img-fluid" src="/assets/img/speaker/speakers-1.jpg">
                           </div>
                           <h4>Web Design Principles and Best Practices</h4>
                           <h5 class="name">David Warner</h5>
@@ -248,7 +248,7 @@
                         <div aria-controls="collapseTwo3" aria-expanded="false" class="collapsed card-header"
                              data-target="#collapseTwo3" data-toggle="collapse">
                           <div class="images-box">
-                            <img alt="" class="img-fluid" src="assets/img/speaker/speakers-2.jpg">
+                            <img alt="" class="img-fluid" src="/assets/img/speaker/speakers-2.jpg">
                           </div>
                           <h4>Web Design Principles and Best Practices</h4>
                           <h5 class="name">David Warner</h5>
@@ -276,7 +276,7 @@
                         <div aria-controls="collapseThree3" aria-expanded="false" class="collapsed card-header"
                              data-target="#collapseThree3" data-toggle="collapse">
                           <div class="images-box">
-                            <img alt="" class="img-fluid" src="assets/img/speaker/speakers-3.jpg">
+                            <img alt="" class="img-fluid" src="/assets/img/speaker/speakers-3.jpg">
                           </div>
                           <h4>Web Design Principles and Best Practices</h4>
                           <h5 class="name">David Warner</h5>
@@ -309,7 +309,7 @@
                         <div aria-controls="collapseOne4" aria-expanded="false" class="collapsed card-header"
                              data-target="#collapseOne4" data-toggle="collapse">
                           <div class="images-box">
-                            <img alt="" class="img-fluid" src="assets/img/speaker/speakers-2.jpg">
+                            <img alt="" class="img-fluid" src="/assets/img/speaker/speakers-2.jpg">
                           </div>
                           <h4>Web Design Principles and Best Practices</h4>
                           <h5 class="name">David Warner</h5>
@@ -338,7 +338,7 @@
                         <div aria-controls="collapseTwo4" aria-expanded="false" class="collapsed card-header"
                              data-target="#collapseTwo4" data-toggle="collapse">
                           <div class="images-box">
-                            <img alt="" class="img-fluid" src="assets/img/speaker/speakers-1.jpg">
+                            <img alt="" class="img-fluid" src="/assets/img/speaker/speakers-1.jpg">
                           </div>
                           <h4>Web Design Principles and Best Practices</h4>
                           <h5 class="name">David Warner</h5>
@@ -366,7 +366,7 @@
                         <div aria-controls="collapseThree4" aria-expanded="false" class="collapsed card-header"
                              data-target="#collapseThree4" data-toggle="collapse">
                           <div class="images-box">
-                            <img alt="" class="img-fluid" src="assets/img/speaker/speakers-3.jpg">
+                            <img alt="" class="img-fluid" src="/assets/img/speaker/speakers-3.jpg">
                           </div>
                           <h4>Web Design Principles and Best Practices</h4>
                           <h5 class="name">David Warner</h5>
@@ -399,7 +399,7 @@
                         <div aria-controls="collapseTwo" aria-expanded="false" class="collapsed card-header"
                              data-target="#collapseTwo" data-toggle="collapse">
                           <div class="images-box">
-                            <img alt="" class="img-fluid" src="assets/img/speaker/speakers-2.jpg">
+                            <img alt="" class="img-fluid" src="/assets/img/speaker/speakers-2.jpg">
                           </div>
                           <h4>Web Design Principles and Best Practices</h4>
                           <h5 class="name">David Warner</h5>
@@ -428,7 +428,7 @@
                         <div aria-controls="collapseOne" aria-expanded="false" class="collapsed card-header"
                              data-target="#collapseOne" data-toggle="collapse">
                           <div class="images-box">
-                            <img alt="" class="img-fluid" src="assets/img/speaker/speakers-1.jpg">
+                            <img alt="" class="img-fluid" src="/assets/img/speaker/speakers-1.jpg">
                           </div>
                           <h4>Web Design Principles and Best Practices</h4>
                           <h5 class="name">David Warner</h5>
@@ -456,7 +456,7 @@
                         <div aria-controls="collapseThree" aria-expanded="false" class="collapsed card-header"
                              data-target="#collapseThree" data-toggle="collapse">
                           <div class="images-box">
-                            <img alt="" class="img-fluid" src="assets/img/speaker/speakers-3.jpg">
+                            <img alt="" class="img-fluid" src="/assets/img/speaker/speakers-3.jpg">
                           </div>
                           <h4>Web Design Principles and Best Practices</h4>
                           <h5 class="name">David Warner</h5>

@@ -38,7 +38,7 @@ useHead({
                 <img
                     alt=""
                     class="img-fluid"
-                    src="assets/img/team/team-01.jpg"
+                    src="/assets/img/team/team-01.jpg"
                 />
                 <div class="team-overlay">
                   <div class="overlay-social-icon text-center">
@@ -79,7 +79,7 @@ useHead({
                 <img
                     alt=""
                     class="img-fluid"
-                    src="assets/img/team/team-02.jpg"
+                    src="/assets/img/team/team-02.jpg"
                 />
                 <div class="team-overlay">
                   <div class="overlay-social-icon text-center">
@@ -120,7 +120,7 @@ useHead({
                 <img
                     alt=""
                     class="img-fluid"
-                    src="assets/img/team/team-03.jpg"
+                    src="/assets/img/team/team-03.jpg"
                 />
                 <div class="team-overlay">
                   <div class="overlay-social-icon text-center">
@@ -161,7 +161,7 @@ useHead({
                 <img
                     alt=""
                     class="img-fluid"
-                    src="assets/img/team/team-04.jpg"
+                    src="/assets/img/team/team-04.jpg"
                 />
                 <div class="team-overlay">
                   <div class="overlay-social-icon text-center">
@@ -202,7 +202,7 @@ useHead({
                 <img
                     alt=""
                     class="img-fluid"
-                    src="assets/img/team/team-05.jpg"
+                    src="/assets/img/team/team-05.jpg"
                 />
                 <div class="team-overlay">
                   <div class="overlay-social-icon text-center">
@@ -243,7 +243,7 @@ useHead({
                 <img
                     alt=""
                     class="img-fluid"
-                    src="assets/img/team/team-06.jpg"
+                    src="/assets/img/team/team-06.jpg"
                 />
                 <div class="team-overlay">
                   <div class="overlay-social-icon text-center">
@@ -284,7 +284,7 @@ useHead({
                 <img
                     alt=""
                     class="img-fluid"
-                    src="assets/img/team/team-07.jpg"
+                    src="/assets/img/team/team-07.jpg"
                 />
                 <div class="team-overlay">
                   <div class="overlay-social-icon text-center">
@@ -325,7 +325,7 @@ useHead({
                 <img
                     alt=""
                     class="img-fluid"
-                    src="assets/img/team/team-08.jpg"
+                    src="/assets/img/team/team-08.jpg"
                 />
                 <div class="team-overlay">
                   <div class="overlay-social-icon text-center">
