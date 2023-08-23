@@ -64,7 +64,7 @@ useHead({
           <div class="col-lg-3 col-md-6 col-xs-12">
             <div class="team-item wow fadeInUp" data-wow-delay="0.4s">
               <div class="team-img">
-                <img alt="" class="img-fluid" src="/assets/img/team/team-02.jpg" />
+                <img alt="" class="img-fluid" src="/assets/img/team/rono.jpg" />
                 <div class="team-overlay">
                   <div class="overlay-social-icon text-center">
                     <ul class="social-icons">
