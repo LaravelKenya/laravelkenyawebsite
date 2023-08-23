@@ -126,7 +126,7 @@ useSeoMeta({
               </div>
               <div class="counter-content">
                 <div class="counterUp">43</div>
-                <p>Spekers</p>
+                <p>Speakers</p>
               </div>
             </div>
           </div>
