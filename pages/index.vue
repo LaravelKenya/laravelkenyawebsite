@@ -2,6 +2,14 @@
 useHead({
   title: "Home"
 })
+useSeoMeta({
+  title: 'Laravel Kenya',
+  description: 'Laravel Kenya Community',
+  ogTitle: 'Laravel Kenya',
+  ogDescription: 'Laravel Kenya Community',
+  twitterTitle: 'Laravel Kenya Community',
+  twitterDescription: 'Welcome to Laravel Kenya Community. We are glad to have you',
+})
 </script>
 
 <template>

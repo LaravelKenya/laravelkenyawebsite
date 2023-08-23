@@ -1,5 +1,23 @@
 <script lang="ts" setup>
+useSeoMeta({
+  ogImage: '/seo/twitter-image.png',
+  ogUrl: '[og:url]',
+  twitterImage: '/seo/twitter-image.png',
+  twitterCard: 'summary'
+})
 
+useHead({
+  htmlAttrs: {
+    lang: 'en'
+  },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/png',
+      href: '/seo/logo.png'
+    }
+  ],
+})
 </script>
 
 <template>
