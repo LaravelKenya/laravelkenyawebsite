@@ -18,3 +18,19 @@ export interface User extends LoginDetails {
     location: string,
     role?: string | ""
 }
+
+export interface Event {
+    id?: number,
+    name: string,
+    location: string,
+    date: string
+    schedules?: Schedules[]
+}
+
+export interface Schedules {
+    id?: number,
+    startTime: string,
+    endTime: string,
+    description?: string,
+    event?: Event
+}

@@ -19,11 +19,40 @@ model Contacts {
 }
 
 model User {
-  id          Int     @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   name        String
   email       String
   password    String
   phoneNumber String
   location    String
   role        String?
+  Speaker     Speaker?
+}
+
+model Speaker {
+  id       Int     @id @default(autoincrement())
+  userId   Int     @unique
+  user     User    @relation(fields: [userId], references: [id])
+  bio      String?
+  website  String?
+  github   String?
+  twitter  String?
+  linkedIn String?
+}
+
+model Event {
+  id        Int        @id @default(autoincrement())
+  name      String
+  date      DateTime
+  location  String
+  schedules Schedule[]
+}
+
+model Schedule {
+  id          Int      @id @default(autoincrement())
+  startTime   DateTime
+  endTime     DateTime
+  description String?
+  eventId     Int
+  event       Event    @relation(fields: [eventId], references: [id])
 }
