@@ -19,6 +19,18 @@ export interface User extends LoginDetails {
     role?: string | ""
 }
 
+export interface Speaker {
+    id?: number
+    bio?: string,
+    website?: string,
+    github?: string,
+    twitter?: string,
+    linkedIn?: string,
+    img?: string,
+    user?: User,
+    userId: number
+}
+
 export interface Event {
     id?: number,
     name: string,

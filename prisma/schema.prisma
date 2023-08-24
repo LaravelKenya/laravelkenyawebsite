@@ -38,6 +38,7 @@ model Speaker {
   github   String?
   twitter  String?
   linkedIn String?
+  img      String?
 }
 
 model Event {
