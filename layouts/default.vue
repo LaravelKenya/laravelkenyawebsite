@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+
+
 useSeoMeta({
   ogImage: '/seo/twitter-image.png',
   ogUrl: '[og:url]',

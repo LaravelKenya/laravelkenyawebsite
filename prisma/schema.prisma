@@ -6,8 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("SUPABASE")
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
 }
 
 model Contacts {
@@ -16,4 +16,14 @@ model Contacts {
   email   String
   subject String
   message String
+}
+
+model User {
+  id          Int     @id @default(autoincrement())
+  name        String
+  email       String
+  password    String
+  phoneNumber String
+  location    String
+  role        String?
 }

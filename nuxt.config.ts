@@ -8,10 +8,11 @@ export default defineNuxtConfig({
         '/assets/css/slicknav.css',
         "/assets/css/colors/red.css",
     ],
-
-    app: {
-        head: {}
+    modules: ['@pinia/nuxt', "@nuxt/image"],
+    pinia: {
+        autoImports: [
+            "defineStore"
+        ]
     },
 
-    modules: ['@pinia/nuxt', "@nuxt/image"]
 })
