@@ -337,7 +337,7 @@ useHead({
             </div>
           </div> -->
         </div>
-        <a class="btn btn-common mt-30 wow fadeInUp" data-wow-delay="1.9s" href="speakers.html">Meet with all speakers</a>
+        <a class="btn btn-common mt-30 wow fadeInUp" data-wow-delay="1.9s" href="#">Meet with all speakers</a>
       </div>
     </section>
   </div>
