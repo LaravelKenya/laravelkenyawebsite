@@ -3,11 +3,11 @@ const mobileMenu = ref(false)
 </script>
 
 <template>
-  <div class="mobile-menu" data-logo="assets/img/logo.png">
+  <div class="mobile-menu" data-logo="/seo/logo.png">
     <div class="slicknav_menu">
       <div class="slicknav_brand">
         <NuxtLink to="/">
-          <img alt="logo" class="img-responsive" src="/assets/img/logo.png">
+          <nuxt-img class="img-responsive" lazy src="/seo/logo.png"/>
         </NuxtLink>
       </div>
       <button class="slicknav_btn slicknav_collapsed"

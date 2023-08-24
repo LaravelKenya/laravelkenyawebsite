@@ -10,11 +10,16 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxt/image": "^1.0.0-rc.1",
+    "@pinia/nuxt": "^0.4.11",
     "@types/node": "^18.17.3",
     "nuxt": "^3.6.5",
     "prisma": "^5.2.0"
   },
   "dependencies": {
     "@prisma/client": "^5.2.0"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }
