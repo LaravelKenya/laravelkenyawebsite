@@ -41,6 +41,7 @@ export interface Event {
 
 export interface Schedules {
     id?: number,
+    eventId: number,
     startTime: string,
     endTime: string,
     description?: string,
