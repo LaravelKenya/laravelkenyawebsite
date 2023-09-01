@@ -9,14 +9,29 @@ export const useAuthStore = defineStore("auth", () => {
         password: "",
         confirmPassword: ""
     })
+    const loading = ref<boolean>(false)
 
-    const login = async (user: LoginDetails) => {
-
+    const login = async (details: LoginDetails) => {
+        loading.value = true
+        const {data, pending, error} = await useFetch('/api/auth/login', {
+            method: 'POST',
+            body: details,
+            watch: false
+        })
+        user.value = data.value?.user as User
+        loading.value = pending.value
     }
 
-    const register = async (user: User) => {
-
+    const register = async (userReg: User) => {
+        loading.value = true
+        const {data, pending, error} = await useFetch('/api/auth/register', {
+            method: 'POST',
+            body: userReg,
+            watch: false
+        })
+        user.value = data.value?.user as User
+        loading.value = pending.value
     }
 
-    return {user, login, register}
+    return {user, login, register, loading}
 })
