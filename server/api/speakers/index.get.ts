@@ -9,6 +9,6 @@ export default defineEventHandler(async (event) => {
         })
     }
     return {
-        speakers: await getSpeakers()
+        data: await getSpeakers()
     }
 })

@@ -2,6 +2,10 @@
 import {ChevronRightIcon, HomeIcon, PencilSquareIcon} from "@heroicons/vue/20/solid";
 import {User} from "~/types/types";
 
+useHead({
+  title: "Admin / Users"
+})
+
 definePageMeta({
   layout: "admin"
 })
