@@ -7,12 +7,16 @@ const links = [
   {name: "Users", href: "/admin/users"},
   {name: "Settings", href: "/admin/settings"},
 ]
+const activeRoute = (route: string) => {
+  return useRoute().fullPath === route
+}
 </script>
 
 <template>
   <ul class="tw-pb-2 tw-space-y-2">
     <li v-for="(link, i) in links" :key="i">
       <NuxtLink
+          :class="activeRoute(link.href) ? 'tw-bg-gray-200 dark:tw-bg-gray-600' : ''"
           :to="link.href"
           class="tw-flex tw-items-center tw-p-2 tw-text-base tw-text-gray-900 tw-rounded-lg hover:tw-bg-gray-100 group dark:tw-text-gray-200 dark:hover:tw-bg-gray-700">
         <svg

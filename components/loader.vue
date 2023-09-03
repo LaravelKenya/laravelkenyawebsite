@@ -1,8 +1,12 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+</script>
 
 <template>
-  <div class="lds-dual-ring">
+  <div class="tw-items-center">
+    <div class="lds-dual-ring">
+    </div>
   </div>
+
 </template>
 
 <style scoped>

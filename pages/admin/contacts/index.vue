@@ -1,9 +1,24 @@
 <script lang="ts" setup>
+import {ChevronRightIcon, HomeIcon, PencilSquareIcon} from "@heroicons/vue/20/solid";
+import {Contacts} from "~/types/types";
 
 definePageMeta({
-  layout: "admin"
+  layout: "admin",
 })
+useHead({
+  title: "Admin / Contacts"
+})
+const loading = ref<boolean>(false)
 const filterDropdown = ref<boolean>(false)
+const contacts = ref<Contacts[]>([])
+
+const fetchFeedbacks = async () => {
+  loading.value = true
+  const {data, pending, error, refresh} = await useFetch('/api/contacts')
+  contacts.value = data.value?.data as Contacts[]
+  loading.value = pending.value
+}
+fetchFeedbacks()
 </script>
 
 <template>
@@ -17,26 +32,19 @@ const filterDropdown = ref<boolean>(false)
             <nav aria-label="Breadcrumb" class="tw-flex tw-mb-5">
               <ol class="tw-inline-flex tw-items-center tw-space-x-1 tw-text-sm tw-font-medium md:tw-space-x-2">
                 <li class="tw-inline-flex tw-items-center">
-                  <a class="tw-inline-flex tw-items-center tw-text-gray-700 hover:text-primary-600 dark:tw-text-gray-300 dark:hover:tw-text-white"
-                     href="#">
-                    <svg class="tw-w-5 tw-h-5 tw-mr-2.5" fill="currentColor" viewBox="0 0 20 20"
-                         xmlns="http://www.w3.org/2000/svg">
-                      <path
-                          d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
-                    </svg>
+                  <NuxtLink
+                      class="tw-inline-flex tw-items-center tw-text-gray-700 hover:text-primary-600 dark:tw-text-gray-300 dark:hover:tw-text-white"
+                      to="/admin/dashboard">
+                    <HomeIcon class="tw-w-5 tw-h-5 tw-mr-2.5"/>
                     Home
-                  </a>
+                  </NuxtLink>
                 </li>
                 <li>
                   <div class="tw-flex tw-items-center">
-                    <svg class="tw-w-6 tw-h-6 tw-text-gray-400" fill="currentColor" viewBox="0 0 20 20"
-                         xmlns="http://www.w3.org/2000/svg">
-                      <path clip-rule="evenodd"
-                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                            fill-rule="evenodd"></path>
-                    </svg>
-                    <a class="tw-ml-1 tw-text-gray-700 hover:text-primary-600 md:tw-ml-2 dark:tw-text-gray-300 dark:hover:tw-text-white"
-                       href="#">Contacts</a>
+                    <ChevronRightIcon class="tw-w-6 tw-h-6 tw-text-gray-400"/>
+                    <p
+                        class="tw-ml-1 tw-text-gray-700 hover:text-primary-600 md:tw-ml-2 dark:tw-text-gray-300 dark:hover:tw-text-white"
+                    >Contacts</p>
                   </div>
                 </li>
 
@@ -89,9 +97,10 @@ const filterDropdown = ref<boolean>(false)
                   </th>
                 </tr>
                 </thead>
+                <Loader v-if="loading"/>
                 <tbody class="tw-bg-white tw-divide-y tw-divide-gray-200 dark:tw-bg-gray-800 dark:tw-divide-gray-700">
 
-                <tr class="hover:tw-bg-gray-100 dark:hover:tw-bg-gray-700">
+                <tr v-for="(contact, i) in contacts" :key="i" class="hover:tw-bg-gray-100 dark:hover:tw-bg-gray-700">
                   <td class="tw-w-4 tw-p-4">
                     <div class="tw-flex tw-items-center">
                       <input id="checkbox-194556" aria-describedby="checkbox-1"
@@ -101,20 +110,20 @@ const filterDropdown = ref<boolean>(false)
                     </div>
                   </td>
                   <td class="tw-p-4 tw-text-sm tw-font-normal tw-text-gray-500 tw-whitespace-nowrap dark:tw-text-gray-400">
-                    <div class="tw-text-base tw-font-semibold tw-text-gray-900 dark:tw-text-white">Education Dashboard
+                    <div class="tw-text-base tw-font-semibold tw-text-gray-900 dark:tw-text-white">
+                      {{ contact.name }}
                     </div>
-                    <div class="tw-text-sm tw-font-normal tw-text-gray-500 dark:tw-text-gray-400">Html templates</div>
                   </td>
                   <td class="tw-p-4 tw-text-base tw-font-medium tw-text-gray-900 tw-whitespace-nowrap dark:tw-text-white">
-                    Angular
+                    {{ contact.email }}
+                  </td>
+                  <td class="tw-p-4 tw-text-base tw-font-medium tw-text-gray-900 tw-whitespace-nowrap dark:tw-text-white">
+                    {{ contact.subject }}
                   </td>
                   <td class="tw-max-w-sm tw-p-4 tw-overflow-hidden tw-text-base tw-font-normal tw-text-gray-500 tw-truncate xl:tw-max-w-xs dark:tw-text-gray-400">
-                    Start developing with an open-source library of over 450+ UI components, sections, and pages built
-                    with the utility classes from Tailwind CSS and designed in Figma.
+                    {{ contact.message }}
                   </td>
-                  <td class="tw-p-4 tw-text-base tw-font-medium tw-text-gray-900 tw-whitespace-nowrap dark:tw-text-white">
-                    #194556
-                  </td>
+
                   <td class="tw-p-4 tw-text-base tw-font-medium tw-text-gray-900 tw-whitespace-nowrap dark:tw-text-white">
                     Read
                   </td>
@@ -123,13 +132,7 @@ const filterDropdown = ref<boolean>(false)
                     <button
                         class="tw-inline-flex tw-items-center tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-text-center tw-text-white tw-rounded-lg tw-bg-primary-700 hover:bg-primary-800 focus:tw-ring-4 focus:ring-primary-300 dark:tw-bg-primary-600 dark:hover:tw-bg-primary-700 dark:focus:ring-primary-800"
                         type="button">
-                      <svg class="tw-w-4 tw-h-4 tw-mr-2" fill="currentColor" viewBox="0 0 20 20"
-                           xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"></path>
-                        <path clip-rule="evenodd"
-                              d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-                              fill-rule="evenodd"></path>
-                      </svg>
+                      <PencilSquareIcon class="tw-w-4 tw-h-4 tw-mr-2"/>
                       Update
                     </button>
                   </td>

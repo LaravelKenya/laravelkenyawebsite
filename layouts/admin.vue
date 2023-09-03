@@ -26,6 +26,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <body class="tw-bg-gray-50 dark:tw-bg-gray-800">
   <div class="tw-bg-gray-50 tw-dark:bg-gray-800">
     <LayoutAdminNavBarComponent/>
     <div class="tw-flex tw-pt-16 tw-overflow-hidden tw-bg-gray-50 dark:tw-bg-gray-900">
@@ -35,6 +36,8 @@ onMounted(() => {
       <slot/>
     </div>
   </div>
+  </body>
+
 </template>
 
 <style scoped></style>

@@ -5,6 +5,6 @@ export default defineEventHandler(async (event) => {
         return prisma.contacts.findMany();
     }
     return {
-        body: await contacts()
+        data: await contacts()
     }
 })
