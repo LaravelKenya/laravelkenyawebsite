@@ -2,6 +2,7 @@ import {LoginDetails, User} from "~/types/types";
 import {prisma} from "~/server/prisma";
 import {compare} from "bcrypt";
 import {userTransformer} from "~/server/utils/userTransformer";
+import {generateTokens, sendRefreshToken} from "~/server/utils/JWT";
 
 export default defineEventHandler(async (event) => {
     const body = await readBody(event)
@@ -31,7 +32,10 @@ export default defineEventHandler(async (event) => {
         statusCode: 400,
         statusMessage: "The user credentials do not match"
     }))
+    const {accessToken, refreshToken} = generateTokens(user)
+    sendRefreshToken(event, refreshToken)
     return {
+        access_token: accessToken,
         user: userTransformer(user)
     }
 })

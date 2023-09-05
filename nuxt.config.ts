@@ -1,7 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: {enabled: true},
-
     css: [
         '/assets/css/bootstrap.min.css',
         '/assets/css/main.css',
@@ -13,11 +12,16 @@ export default defineNuxtConfig({
       "@nuxt/image",
       '@nuxtjs/tailwindcss',
       'nuxt-headlessui',
+      '@pinia-plugin-persistedstate/nuxt'
     ],
     pinia: {
         autoImports: [
             "defineStore"
         ]
     },
+    runtimeConfig: {
+        JWT_ACCESS_TOKEN: "mySecretToken",
+        JWT_REFRESH_TOKEN: "mySecretToken"
+    }
 
 })

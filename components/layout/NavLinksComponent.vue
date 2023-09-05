@@ -9,7 +9,8 @@ const links = [
   {name: "Speakers", href: "/speakers"},
   {name: "Blog", href: "/blog"},
   {name: "Contact", href: "/contact"},
-  {name: "About Us", href: "/about"}
+  {name: "About Us", href: "/about"},
+  {name: "Login", href: "/auth/login"}
 ]
 </script>
 

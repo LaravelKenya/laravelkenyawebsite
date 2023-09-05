@@ -10,7 +10,7 @@ export const useAuthStore = defineStore("auth", () => {
         confirmPassword: ""
     })
     const loading = ref<boolean>(false)
-
+    const accessToken = ref<string>("")
     const login = async (details: LoginDetails) => {
         loading.value = true
         const {data, pending, error} = await useFetch('/api/auth/login', {
@@ -18,8 +18,15 @@ export const useAuthStore = defineStore("auth", () => {
             body: details,
             watch: false
         })
-        user.value = data.value?.user as User
-        loading.value = pending.value
+        if (data.value?.user) {
+            user.value = data.value?.user as User
+            accessToken.value = data.value?.access_token as string
+            loading.value = pending.value
+            await navigateTo("/admin/dashboard")
+        } else {
+            loading.value = pending.value
+        }
+
     }
 
     const register = async (userReg: User) => {
@@ -34,4 +41,6 @@ export const useAuthStore = defineStore("auth", () => {
     }
 
     return {user, login, register, loading}
+}, {
+    persist: true
 })
