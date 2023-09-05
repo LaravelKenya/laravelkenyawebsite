@@ -9,6 +9,7 @@ module.exports = {
         "./nuxt.config.{js,ts}",
         "./node_modules/flowbite/**/*.{js,ts}",
         './node_modules/flowbite-vue/**/*.{js,jsx,ts,tsx}',
+        "node_modules/tailvue/dist/tailvue.es.js",
     ],
     theme: {
         extend: {

@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 import {useNavigationStore} from "~/stores/useNavigationStore";
+import {useAuthStore} from "~/stores/useAuthStore";
+import {MoonIcon, SunIcon} from "@heroicons/vue/24/solid";
 
 const navigation = useNavigationStore()
 const userOpen = ref<boolean>(false)
@@ -44,6 +46,8 @@ onBeforeUnmount(() => {
 
 // Watch for changes in userOpen and trigger transformation updates
 watch(userOpen, updateUserTransform);
+const auth = useAuthStore()
+
 </script>
 
 <template>
@@ -114,17 +118,8 @@ watch(userOpen, updateUserTransform);
                   class="tw-text-gray-500 dark:tw-text-gray-400 hover:tw-bg-gray-100 dark:hover:tw-bg-gray-700 focus:tw-outline-none focus:tw-ring-4 focus:tw-ring-gray-200 dark:focus:tw-ring-gray-700 tw-rounded-lg tw-text-sm tw-p-2.5"
                   data-tooltip-target="tooltip-toggle"
                   type="button">
-            <svg id="theme-toggle-dark-icon" class="tw-hidden tw-w-5 tw-h-5" fill="currentColor" viewBox="0 0 20 20"
-                 xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-            </svg>
-            <svg id="theme-toggle-light-icon" class="tw-hidden tw-w-5 tw-h-5" fill="currentColor" viewBox="0 0 20 20"
-                 xmlns="http://www.w3.org/2000/svg">
-              <path
-                  clip-rule="evenodd"
-                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                  fill-rule="evenodd"></path>
-            </svg>
+            <SunIcon class="tw-hidden tw-w-5 tw-h-5"/>
+            <MoonIcon class="tw-w-5 tw-h-5"/>
           </button>
           <div id="tooltip-toggle"
                class="tw-absolute tw-z-10 tw-invisible tw-inline-block tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-text-white tw-transition-opacity tw-duration-300 tw-bg-gray-900 tw-rounded-lg tw-shadow-sm tw-opacity-0 tooltip"
@@ -150,22 +145,19 @@ watch(userOpen, updateUserTransform);
                  class="tw-z-50  tw-my-4 tw-text-base tw-list-none tw-bg-white tw-divide-y tw-divide-gray-100 tw-rounded tw-shadow dark:tw-bg-gray-700 dark:tw-divide-gray-600">
               <div class="tw-px-4 tw-py-3" role="none">
                 <p class="tw-text-sm tw-text-gray-900 dark:tw-text-white" role="none">
-                  Neil Sims
+                  {{ auth.user.name }}
                 </p>
                 <p class="tw-text-sm tw-font-medium tw-text-gray-900 tw-truncate dark:tw-text-gray-300" role="none">
-                  neil.sims@flowbite.com
+                  {{ auth.user.email }}
                 </p>
               </div>
               <ul class="tw-py-1" role="none">
                 <li>
-                  <a class="tw-block tw-px-4 tw-py-2 tw-text-sm tw-text-gray-700 hover:tw-bg-gray-100 dark:tw-text-gray-300 dark:hover:tw-bg-gray-600 dark:hover:tw-text-white"
-                     href="#"
-                     role="menuitem">Dashboard</a>
-                </li>
-                <li>
-                  <a class="tw-block tw-px-4 tw-py-2 tw-text-sm tw-text-gray-700 hover:tw-bg-gray-100 dark:tw-text-gray-300 dark:hover:tw-bg-gray-600 dark:hover:tw-text-white"
-                     href="#"
-                     role="menuitem">Settings</a>
+                  <NuxtLink
+                      class="tw-block tw-px-4 tw-py-2 tw-text-sm tw-text-gray-700 hover:tw-bg-gray-100 dark:tw-text-gray-300 dark:hover:tw-bg-gray-600 dark:hover:tw-text-white"
+                      to="/admin/settings"
+                  >Settings
+                  </NuxtLink>
                 </li>
                 <li>
                   <a class="tw-block tw-px-4 tw-py-2 tw-text-sm tw-text-gray-700 hover:tw-bg-gray-100 dark:tw-text-gray-300 dark:hover:tw-bg-gray-600 dark:hover:tw-text-white"
@@ -173,9 +165,11 @@ watch(userOpen, updateUserTransform);
                      role="menuitem">Earnings</a>
                 </li>
                 <li>
-                  <a class="tw-block tw-px-4 tw-py-2 tw-text-sm tw-text-gray-700 hover:tw-bg-gray-100 dark:tw-text-gray-300 dark:hover:tw-bg-gray-600 dark:hover:tw-text-white"
-                     href="#"
-                     role="menuitem">Sign out</a>
+                  <button
+                      class="tw-block tw-px-4 tw-py-2 tw-text-sm tw-text-gray-700 hover:tw-bg-gray-100 dark:tw-text-gray-300 dark:hover:tw-bg-gray-600 dark:hover:tw-text-white"
+                      @click.prevent="auth.logout"
+                  >Sign out
+                  </button>
                 </li>
               </ul>
             </div>

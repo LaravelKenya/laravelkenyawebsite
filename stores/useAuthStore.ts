@@ -26,7 +26,6 @@ export const useAuthStore = defineStore("auth", () => {
         } else {
             loading.value = pending.value
         }
-
     }
 
     const register = async (userReg: User) => {
@@ -40,7 +39,11 @@ export const useAuthStore = defineStore("auth", () => {
         loading.value = pending.value
     }
 
-    return {user, login, register, loading}
+    const logout = async () => {
+        await navigateTo("/auth/login")
+    }
+
+    return {user, login, register, loading, logout}
 }, {
     persist: true
 })
