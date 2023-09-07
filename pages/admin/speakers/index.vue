@@ -6,14 +6,15 @@ useHead({
   title: "Admin / Speakers"
 })
 definePageMeta({
-  layout: "admin"
+  layout: "admin",
+  middleware: "auth"
 })
 const loading = ref<boolean>(false)
 const speakers = ref<Speaker []>([])
 
 const fetchSpeakers = async () => {
   loading.value = true
-  const {data, pending, error, refresh} = await useFetch('/api/speakers')
+  const {data, pending} = await useApiFetch('/api/speakers')
   speakers.value = data.value?.data as Speaker[]
   loading.value = pending.value
 }

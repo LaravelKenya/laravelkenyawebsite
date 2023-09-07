@@ -7,13 +7,14 @@ useHead({
 })
 
 definePageMeta({
-  layout: "admin"
+  layout: "admin",
+  middleware: "auth"
 })
 const users = ref<User []>([])
 const loading = ref<boolean>(false)
 const fetchUsers = async () => {
   loading.value = true
-  const {data, pending, error, refresh} = await useFetch('/api/users')
+  const {data, pending,} = await useApiFetch('/api/users')
   users.value = data.value?.data as User[]
   loading.value = pending.value
 }

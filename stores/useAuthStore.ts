@@ -48,6 +48,7 @@ export const useAuthStore = defineStore("auth", () => {
         await navigateTo("/auth/login")
     }
 
+
     return {user, login, register, loading, logout, accessToken, authenticated}
 }, {
     persist: true

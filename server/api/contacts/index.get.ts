@@ -1,5 +1,4 @@
 import {prisma} from "~/server/prisma";
-import {verifyAccessToken} from "~/server/utils/JWT";
 
 export default defineEventHandler(async (event) => {
     const valid = await verifyAccessToken(event)

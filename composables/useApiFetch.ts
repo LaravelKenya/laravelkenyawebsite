@@ -13,7 +13,7 @@ export const useApiFetch = async <T>(path: string, options: UseFetchOptions<T> =
         }
     })
     if (response.error.value?.statusCode === 401) {
-        await navigateTo("/auth/login")
+        await auth.logout()
     }
     return response
 }
