@@ -14,6 +14,6 @@ export default defineEventHandler(async (event) => {
         })
     }
     return {
-        events: await getEvents()
+        data: await getEvents()
     }
 })
