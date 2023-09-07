@@ -40,6 +40,8 @@ export const useAuthStore = defineStore("auth", () => {
     }
 
     const logout = async () => {
+        user.value = {email: "", location: "", name: "", password: "", phoneNumber: ""}
+        accessToken.value = ""
         await navigateTo("/auth/login")
     }
 

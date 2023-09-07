@@ -39,6 +39,7 @@ const user = ref<LoginDetails>({
       <FormButtonComponent label="Sign In" type="button" @click.prevent="auth.login(user)">
         <Loader v-if="auth.loading"/>
       </FormButtonComponent>
+
       <p class="tw-text-sm tw-font-light tw-text-gray-500 dark:tw-text-gray-400">
         Don’t have an account yet?
         <NuxtLink
@@ -47,6 +48,7 @@ const user = ref<LoginDetails>({
         </NuxtLink>
       </p>
     </form>
+    <AuthSocialComponent/>
   </div>
 </template>
 

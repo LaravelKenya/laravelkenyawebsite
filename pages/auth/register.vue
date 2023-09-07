@@ -50,6 +50,7 @@ const auth = useAuthStore()
         </NuxtLink>
       </p>
     </form>
+    <LazyAuthSocialComponent/>
   </div>
 </template>
 

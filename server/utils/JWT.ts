@@ -39,11 +39,20 @@ export const decodeRefreshToken = (token: string) => {
     }
 }
 
-export const decodeAccessToken = (token: string) => {
+export const decodeAccessToken = async (token: string) => {
     try {
         const config = useRuntimeConfig()
-        return jwt.verify(token, config.JWT_ACCESS_TOKEN)
+        return await jwt.verify(token, config.JWT_ACCESS_TOKEN)
     } catch (e) {
+        if (e instanceof jwt.TokenExpiredError) {
+            return false
+        }
         return e
     }
+}
+
+export const verifyAccessToken = async (event: H3Event) => {
+    const headers = getHeaders(event)
+    const token = headers.authorization?.split(" ")[1] as string
+    return await decodeAccessToken(token)
 }
