@@ -47,7 +47,7 @@ export const decodeAccessToken = async (token: string) => {
         if (e instanceof jwt.TokenExpiredError) {
             return false
         }
-        return e
+        return false
     }
 }
 

@@ -3,7 +3,8 @@ import {User} from "~/types/types";
 import {useAuthStore} from "~/stores/useAuthStore";
 
 definePageMeta({
-  layout: "auth"
+  layout: "auth",
+  middleware: "guest"
 })
 useSeoMeta({
   title: 'Register',

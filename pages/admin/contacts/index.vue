@@ -14,7 +14,7 @@ const contacts = ref<Contacts[]>([])
 
 const fetchFeedbacks = async () => {
   loading.value = true
-  const {data, pending, error, refresh} = await useFetch('/api/contacts')
+  const {data, pending,} = await useApiFetch('/api/contacts')
   contacts.value = data.value?.data as Contacts[]
   loading.value = pending.value
 }

@@ -13,7 +13,8 @@ useSeoMeta({
 
 const auth = useAuthStore()
 definePageMeta({
-  layout: "auth"
+  layout: "auth",
+  middleware: "guest"
 })
 const user = ref<LoginDetails>({
   email: '',
