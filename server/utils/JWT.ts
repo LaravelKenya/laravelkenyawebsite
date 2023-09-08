@@ -6,7 +6,7 @@ import {H3Event} from "h3";
 const generateAccessTokens = (user: User) => {
     const config = useRuntimeConfig()
     return jwt.sign({userId: user.id}, config.JWT_ACCESS_TOKEN, {
-        expiresIn: "10m"
+        expiresIn: "10h"
     })
 }
 const generateRefreshToken = (user: User) => {

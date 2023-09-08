@@ -47,3 +47,9 @@ export interface Schedules {
     description?: string,
     event?: Event
 }
+
+export interface ChangePassword {
+    currentPassword: string,
+    newPassword: string,
+    confirmPassword: string
+}

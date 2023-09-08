@@ -21,6 +21,7 @@ useHead({
 </script>
 
 <template>
+  <body class="tw-bg-gray-50 dark:tw-bg-gray-900">
   <section class="tw-bg-gray-50 dark:tw-bg-gray-900">
     <div
         class="tw-flex tw-flex-col tw-items-center tw-justify-center tw-px-6 tw-py-8 tw-mx-auto md:tw-h-screen lg:tw-py-0">
@@ -36,6 +37,7 @@ useHead({
       </div>
     </div>
   </section>
+  </body>
 </template>
 
 <style scoped></style>

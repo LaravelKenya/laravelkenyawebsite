@@ -1,4 +1,4 @@
-import {LoginDetails, User} from "~/types/types";
+import {ChangePassword, LoginDetails, User} from "~/types/types";
 
 export const useAuthStore = defineStore("auth", () => {
     const user = ref<User>({
@@ -48,8 +48,12 @@ export const useAuthStore = defineStore("auth", () => {
         await navigateTo("/auth/login")
     }
 
+    const changePassword = async (passwords: ChangePassword) => {
 
-    return {user, login, register, loading, logout, accessToken, authenticated}
+    }
+
+
+    return {user, login, register, loading, logout, accessToken, authenticated, changePassword}
 }, {
     persist: true
 })
