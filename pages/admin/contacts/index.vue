@@ -130,10 +130,10 @@ fetchFeedbacks()
 
                   <td class="tw-p-4 tw-space-x-2 tw-whitespace-nowrap">
                     <button
-                        class="tw-inline-flex tw-items-center tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-text-center tw-text-white tw-rounded-lg tw-bg-primary-700 hover:bg-primary-800 focus:tw-ring-4 focus:ring-primary-300 dark:tw-bg-primary-600 dark:hover:tw-bg-primary-700 dark:focus:ring-primary-800"
+                        class="tw-inline-flex tw-items-center tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-text-center tw-text-white tw-rounded-lg tw-bg-red-700 hover:tw-bg-red-800 focus:tw-ring-4 focus:tw-ring-red-300 dark:tw-bg-red-600 dark:hover:tw-bg-red-700 dark:focus:tw-ring-red-800"
                         type="button">
                       <PencilSquareIcon class="tw-w-4 tw-h-4 tw-mr-2"/>
-                      Update
+                      Delete
                     </button>
                   </td>
                 </tr>

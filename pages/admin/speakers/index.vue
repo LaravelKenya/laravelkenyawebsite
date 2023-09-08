@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import {Speaker} from "~/types/types";
-import {ChevronRightIcon, HomeIcon, PencilSquareIcon} from "@heroicons/vue/20/solid";
+import {ChevronRightIcon, EyeIcon, HomeIcon} from "@heroicons/vue/20/solid";
 
 useHead({
   title: "Admin / Speakers"
@@ -139,8 +139,8 @@ fetchSpeakers()
                     <button
                         class="tw-inline-flex tw-items-center tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-text-center tw-text-white tw-rounded-lg tw-bg-primary-700 hover:bg-primary-800 focus:tw-ring-4 focus:ring-primary-300 dark:tw-bg-primary-600 dark:hover:tw-bg-primary-700 dark:focus:ring-primary-800"
                         type="button">
-                      <PencilSquareIcon class="tw-w-4 tw-h-4 tw-mr-2"/>
-                      Update
+                      <EyeIcon class="tw-w-4 tw-h-4 tw-mr-2"/>
+                      View
                     </button>
                   </td>
                 </tr>

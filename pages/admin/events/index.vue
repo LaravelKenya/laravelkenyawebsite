@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import {ChevronRightIcon, HomeIcon, PencilSquareIcon} from "@heroicons/vue/20/solid";
+import {ChevronRightIcon, EyeIcon, HomeIcon, PencilSquareIcon} from "@heroicons/vue/20/solid";
 import {Event as Events} from "~/types/types"
 
 definePageMeta({
@@ -12,7 +12,6 @@ const loading = ref<boolean>(false)
 const fetchEvents = async () => {
   loading.value = true
   const {data, pending} = await useApiFetch("/api/events")
-  console.log(data.value)
   events.value = data.value?.data as Events[]
   loading.value = pending.value
 }
@@ -120,10 +119,28 @@ fetchEvents()
 
                   <td class="tw-p-4 tw-space-x-2 tw-whitespace-nowrap">
                     <button
+                        class="tw-inline-flex tw-items-center tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-text-center tw-text-white tw-rounded-lg tw-bg-green-700 hover:bg-green-800 focus:tw-ring-4 focus:tw-ring-green-300 dark:tw-bg-green-600 dark:hover:tw-bg-green-700 dark:focus:tw-ring-green-800"
+                        type="button">
+                      <PencilSquareIcon class="tw-w-4 tw-h-4 tw-mr-2"/>
+                      Add Schedule
+                    </button>
+                    <button
                         class="tw-inline-flex tw-items-center tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-text-center tw-text-white tw-rounded-lg tw-bg-primary-700 hover:bg-primary-800 focus:tw-ring-4 focus:ring-primary-300 dark:tw-bg-primary-600 dark:hover:tw-bg-primary-700 dark:focus:ring-primary-800"
                         type="button">
                       <PencilSquareIcon class="tw-w-4 tw-h-4 tw-mr-2"/>
                       Update
+                    </button>
+                    <button
+                        class="tw-inline-flex tw-items-center tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-text-center tw-text-white tw-rounded-lg tw-bg-primary-700 hover:bg-primary-800 focus:tw-ring-4 focus:ring-primary-300 dark:tw-bg-primary-600 dark:hover:tw-bg-primary-700 dark:focus:ring-primary-800"
+                        type="button">
+                      <EyeIcon class="tw-w-4 tw-h-4 tw-mr-2"/>
+                      View
+                    </button>
+                    <button
+                        class="tw-inline-flex tw-items-center tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-text-center tw-text-white tw-rounded-lg tw-bg-red-700 hover:bg-red-800 focus:tw-ring-4 focus:tw-ring-red-300 dark:tw-bg-red-600 dark:hover:tw-bg-red-700 dark:focus:tw-ring-red-800"
+                        type="button">
+                      <PencilSquareIcon class="tw-w-4 tw-h-4 tw-mr-2"/>
+                      Delete
                     </button>
                   </td>
                 </tr>
