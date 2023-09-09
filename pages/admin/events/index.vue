@@ -1,24 +1,25 @@
 <script lang="ts" setup>
 import {ChevronRightIcon, EyeIcon, HomeIcon, PencilSquareIcon, TrashIcon} from "@heroicons/vue/20/solid";
-import {Event as Events} from "~/types/types"
 import {useNavigationStore} from "~/stores/useNavigationStore";
+import {useEventsStore} from "~/stores/useEventsStore";
 
 definePageMeta({
   layout: "admin",
   middleware: "auth"
 })
 
-const events = ref<Events []>([])
-const loading = ref<boolean>(false)
-const modal = ref<boolean>(false)
-const fetchEvents = async () => {
-  loading.value = true
-  const {data, pending} = await useApiFetch("/api/events")
-  events.value = data.value?.data as Events[]
-  loading.value = pending.value
-}
-fetchEvents()
+const eventId = ref<number>(0)
+const events = useEventsStore()
 const navigationStore = useNavigationStore()
+
+onMounted(async () => {
+  await events.getEvents()
+})
+const addSchedule = (id: number) => {
+  eventId.value = id
+  navigationStore.addScheduleModal(true)
+}
+
 </script>
 
 <template>
@@ -93,10 +94,10 @@ const navigationStore = useNavigationStore()
                   </th>
                 </tr>
                 </thead>
-                <Loader v-if="loading"/>
+                <Loader v-if="events.loading"/>
                 <tbody class="tw-bg-white tw-divide-y tw-divide-gray-200 dark:tw-bg-gray-800 dark:tw-divide-gray-700">
 
-                <tr v-for="(event, i) in events" :key="i" class="hover:tw-bg-gray-100 dark:hover:tw-bg-gray-700">
+                <tr v-for="(event, i) in events.events" :key="i" class="hover:tw-bg-gray-100 dark:hover:tw-bg-gray-700">
                   <td class="tw-w-4 tw-p-4">
                     <div class="tw-flex tw-items-center">
                       <input id="checkbox-194556" aria-describedby="checkbox-1"
@@ -124,7 +125,7 @@ const navigationStore = useNavigationStore()
                     <button
                         class="tw-inline-flex tw-items-center tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-text-center tw-text-white tw-rounded-lg tw-bg-green-700 hover:bg-green-800 focus:tw-ring-4 focus:tw-ring-green-300 dark:tw-bg-green-600 dark:hover:tw-bg-green-700 dark:focus:tw-ring-green-800"
                         type="button"
-                        @click.prevent="navigationStore.addScheduleModal(true)">
+                        @click.prevent="addSchedule(<number>event.id)">
                       <PencilSquareIcon class="tw-w-4 tw-h-4 tw-mr-2"/>
                       Add Schedule
                     </button>
@@ -203,7 +204,7 @@ const navigationStore = useNavigationStore()
         </div>
       </div>
 
-      <AdminAddScheduleComponent/>
+      <AdminAddScheduleComponent v-if="eventId" :event-id="eventId"/>
       <!-- Delete Product Drawer -->
       <AdminDeleteScheduleComponent/>
 

@@ -3,8 +3,8 @@ withDefaults(defineProps<{
   label: string,
   divClasses?: string,
   modelValue: "",
-  placeholder: "",
-  rows: number
+  placeholder?: "",
+  rows?: number
 }>(), {divClasses: "", placeholder: "", rows: 5})
 const emits = defineEmits(["update:modelValue"])
 </script>

@@ -2,18 +2,25 @@
 import {XMarkIcon} from "@heroicons/vue/24/solid";
 import {useNavigationStore} from "~/stores/useNavigationStore";
 import {Schedules} from "~/types/types";
+import {useEventsStore} from "~/stores/useEventsStore";
 
 const navigationStore = useNavigationStore()
+
+const {eventId} = defineProps<{
+  eventId: number
+}>()
 const schedule = ref<Schedules>({
   eventId: 0,
   startTime: '',
   endTime: '',
   description: "",
 })
+const events = useEventsStore()
+events.getEvent(eventId)
 </script>
 
 <template>
-  <div :class="navigationStore.scheduleModalOpen ? 'tw-flex' : 'tw-hidden'"
+  <div :class="navigationStore.scheduleModalOpen ? 'tw-flex ' : 'tw-hidden'"
        aria-modal="true"
        class="tw-flex tw-overflow-y-auto tw-overflow-x-hidden tw-fixed tw-top-0 tw-right-0 tw-left-0 tw-z-50 tw-justify-center tw-items-center tw-w-full md:tw-inset-0 h-modal md:tw-h-full"
        role="dialog"
@@ -38,16 +45,15 @@ const schedule = ref<Schedules>({
         <!-- Modal body -->
         <form action="#">
           <div class="tw-grid tw-gap-4 tw-mb-4 sm:tw-grid-cols-2">
-            <FormInputComponent label="Event Name"/>
-            <FormInputComponent label="Event Location"/>
+            <FormInputComponent v-model="events.event.name" disabled label="Event Name"/>
+            <FormInputComponent v-model="events.event.location" disabled label="Event Location"/>
             <FormInputComponent v-model="schedule.startTime" label="Start Time" type="date"/>
             <FormInputComponent v-model="schedule.endTime" label="End Time" type="date"/>
-            <div class="sm:tw-col-span-2">
-              <FormTextAreaComponent v-model="schedule.description" label="Description"/>
-            </div>
+            <FormTextAreaComponent v-model="schedule.description" div-classes="sm:tw-col-span-2" label="Description"/>
           </div>
           <div class="tw-flex tw-items-center tw-space-x-4">
-            <FormButtonComponent label="Add Schedule" type="button"/>
+            <FormButtonComponent label="Add Schedule" type="button"
+                                 @click.prevent="events.addSchedule(eventId, schedule)"/>
           </div>
         </form>
       </div>

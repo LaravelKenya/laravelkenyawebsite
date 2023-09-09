@@ -10,7 +10,8 @@ export const useApiFetch = async <T>(path: string, options: UseFetchOptions<T> =
         headers: {
             Authorization: `Bearer ${auth.accessToken}`,
             ...options.headers
-        }
+        },
+        watch: false
     })
     if (response.error.value?.statusCode === 401) {
         await auth.logout()
