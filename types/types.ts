@@ -53,3 +53,10 @@ export interface ChangePassword {
     newPassword: string,
     confirmPassword: string
 }
+
+export interface DashboardData {
+    users: number,
+    events: number,
+    feedbacks: number,
+    speakers: number
+}
