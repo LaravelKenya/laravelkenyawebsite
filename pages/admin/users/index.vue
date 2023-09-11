@@ -1,6 +1,12 @@
 <script lang="ts" setup>
-import {ChevronRightIcon, EyeIcon, HomeIcon, PencilSquareIcon} from "@heroicons/vue/20/solid";
+import {CheckIcon, ChevronRightIcon, EyeIcon, HomeIcon, PencilSquareIcon, PlusIcon} from "@heroicons/vue/20/solid";
 import {User} from "~/types/types";
+
+interface UserDetails {
+  name: string,
+  email: string,
+  userId: number
+}
 
 useHead({
   title: "Admin / Users"
@@ -17,8 +23,26 @@ const fetchUsers = async () => {
   const {data, pending,} = await useApiFetch('/api/users')
   users.value = data.value?.data as User[]
   loading.value = pending.value
+  console.log(users.value)
 }
 fetchUsers()
+
+const makeSpeakerModalIsOpen = ref<boolean>(false)
+const openMakeSpeakerModal = () => {
+  makeSpeakerModalIsOpen.value = true
+}
+const closeMakeSpeakerModal = () => {
+  makeSpeakerModalIsOpen.value = false
+}
+const userDetails = ref<UserDetails>({
+  name: '',
+  email: '',
+  userId: 0
+})
+const setUserDetails = (user: UserDetails) => {
+  userDetails.value = user
+  openMakeSpeakerModal()
+}
 </script>
 
 <template>
@@ -129,7 +153,17 @@ fetchUsers()
                   </td>
 
                   <td class="tw-p-4 tw-space-x-2 tw-whitespace-nowrap">
-
+                    <button
+                        :class="user.Speaker ? 'tw-bg-green-800 dark:tw-bg-green-800' :
+                        'tw-bg-green-700 dark:tw-bg-green-600'"
+                        :disabled="!!user.Speaker"
+                        class="tw-inline-flex tw-items-center tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-text-center tw-text-white tw-rounded-lg  hover:tw-bg-green-800 focus:tw-ring-4 focus:tw-ring-green-300  dark:hover:tw-bg-green-700 dark:focus:tw-ring-green-800"
+                        type="button"
+                        @click.prevent="setUserDetails({name: user.name, email: user.email, userId: <number>user.id})">
+                      <CheckIcon v-if="!!user.Speaker" class="tw-w-4 tw-h-4 tw-mr-2"/>
+                      <PlusIcon v-else class="tw-w-4 tw-h-4 tw-mr-2"/>
+                      {{ user.Speaker ? 'Already A Speaker' : 'Make A Speaker' }}
+                    </button>
                     <button
                         class="tw-inline-flex tw-items-center tw-px-3 tw-py-2 tw-text-sm tw-font-medium tw-text-center tw-text-white tw-rounded-lg tw-bg-primary-700 hover:bg-primary-800 focus:tw-ring-4 focus:ring-primary-300 dark:tw-bg-primary-600 dark:hover:tw-bg-primary-700 dark:focus:ring-primary-800"
                         type="button">
@@ -150,6 +184,8 @@ fetchUsers()
           </div>
         </div>
       </div>
+      <AdminSpeakerAddSpeakerComponent v-if="userDetails" :is-open="makeSpeakerModalIsOpen" :user="userDetails"
+                                       @close-modal="closeMakeSpeakerModal"/>
 
       <div
           class="tw-sticky tw-bottom-0 tw-right-0 tw-items-center tw-w-full tw-p-4 tw-bg-white tw-border-t tw-border-gray-200 sm:tw-flex sm:tw-justify-between dark:tw-bg-gray-800 dark:tw-border-gray-700">

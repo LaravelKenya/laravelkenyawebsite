@@ -6,14 +6,16 @@ export default defineEventHandler(async (event) => {
         statusCode: 401,
         statusMessage: "UnAuthenticated"
     }))
-    const users = async () => {
-        return prisma.user.findMany({
-            include: {
-                Speaker: true
+    const param = event.context.params?.id
+    const id = parseParam(param)
+    const getUser = async () => {
+        return prisma.user.findFirst({
+            where: {
+                id
             }
         })
     }
     return {
-        data: await users()
+        data: await getUser()
     }
 })

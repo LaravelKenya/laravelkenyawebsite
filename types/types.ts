@@ -16,7 +16,8 @@ export interface User extends LoginDetails {
     name: string,
     phoneNumber: string,
     location: string,
-    role?: string | ""
+    role?: string | "",
+    Speaker?: Speaker
 }
 
 export interface Speaker {

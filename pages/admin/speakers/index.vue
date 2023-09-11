@@ -51,7 +51,7 @@ fetchSpeakers()
               </ol>
             </nav>
             <h1 class="tw-text-xl tw-font-semibold tw-text-gray-900 sm:tw-text-2xl dark:tw-text-white">All
-              Users</h1>
+              Speakers</h1>
           </div>
         </div>
       </div>
