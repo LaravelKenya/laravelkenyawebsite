@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import {useAuthStore} from "~/stores/useAuthStore";
-import {ChangePassword, User} from "~/types/types";
+import {ChangePassword, Speaker, User} from "~/types/types";
 
 definePageMeta({
   layout: "admin",
@@ -9,6 +9,14 @@ definePageMeta({
 
 const auth = useAuthStore()
 const user = ref<User>(auth.user)
+const speaker = ref<Speaker>({
+  userId: 0,
+  github: "",
+  linkedIn: "",
+  twitter: "",
+  website: "",
+  bio: ""
+})
 
 const password = ref<ChangePassword>({
   currentPassword: '',
@@ -65,10 +73,10 @@ watch(auth.user, (value, oldValue, onCleanup) => {
             <form action="#">
               <div class="tw-grid tw-grid-cols-6 tw-gap-6">
                 <div class="tw-col-span-6 sm:tw-col-span-3">
-                  <FormInputComponent v-model="user.name" label="Name" placeholder="Names"/>
+                  <FormInputComponent v-model="user.name" disabled label="Name" placeholder="Names"/>
                 </div>
                 <div class="tw-col-span-6 sm:tw-col-span-3">
-                  <FormInputComponent v-model="user.email" label="Email Address" placeholder="Email Address"
+                  <FormInputComponent v-model="user.email" disabled label="Email Address" placeholder="Email Address"
                                       type="email"/>
                 </div>
                 <div class="tw-col-span-6 sm:tw-col-span-3">
@@ -78,25 +86,26 @@ watch(auth.user, (value, oldValue, onCleanup) => {
                 <div class="tw-col-span-6 sm:tw-col-span-3">
                   <FormInputComponent v-model="user.location" label="Location" placeholder="Location"/>
                 </div>
+              </div>
+              <div v-if="user.Speaker" class="tw-grid tw-grid-cols-6 tw-gap-6 tw-mt-4">
                 <div class="tw-col-span-6 sm:tw-col-span-3">
-                  <FormInputComponent label="Website" placeholder="Website"/>
+                  <FormInputComponent v-model="speaker.website" label="Website" placeholder="Website"/>
                 </div>
                 <div class="tw-col-span-6 sm:tw-col-span-3">
-                  <FormInputComponent label="Github" placeholder="Github Link"/>
+                  <FormInputComponent v-model="speaker.github" label="Github" placeholder="Github Link"/>
                 </div>
                 <div class="tw-col-span-6 sm:tw-col-span-3">
-                  <FormInputComponent label="Linked In" placeholder="LinkedIn Link"/>
+                  <FormInputComponent v-model="speaker.linkedIn" label="Linked In" placeholder="LinkedIn Link"/>
                 </div>
                 <div class="tw-col-span-6 sm:tw-col-span-3">
-                  <FormInputComponent label="Twitter" placeholder="Twitter Link"/>
+                  <FormInputComponent v-model="speaker.twitter" label="Twitter" placeholder="Twitter Link"/>
                 </div>
                 <div class="tw-col-span-full sm:tw-col-span-full">
-                  <FormInputComponent label="Bio" placeholder="Bio"/>
+                  <FormTextAreaComponent v-model="speaker.bio" label="Bio" rows="3"/>
                 </div>
-                <div class="tw-col-span-6 sm:tw-col-full">
-                  <FormButtonComponent label="Save All" type="button"/>
-                </div>
-
+              </div>
+              <div class="tw-col-span-6 sm:tw-col-full tw-mt-4">
+                <FormButtonComponent label="Save All" type="button"/>
               </div>
             </form>
           </div>

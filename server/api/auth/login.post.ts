@@ -1,4 +1,4 @@
-import {LoginDetails, User} from "~/types/types";
+import {LoginDetails} from "~/types/types";
 import {prisma} from "~/server/prisma";
 import {compare} from "bcrypt";
 import {userTransformer} from "~/server/utils/userTransformer";
@@ -15,11 +15,14 @@ export default defineEventHandler(async (event) => {
         }))
     }
 
-    const findUserByEmail = async (email: string): Promise<User> => {
+    const findUserByEmail = async (email: string) => {
         return prisma.user.findFirst({
             where: {
                 email: email
             },
+            include: {
+                Speaker: true
+            }
         })
     }
     const user = await findUserByEmail(email)

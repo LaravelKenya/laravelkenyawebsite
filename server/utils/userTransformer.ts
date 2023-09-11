@@ -7,6 +7,7 @@ export const userTransformer = (user: User) => {
         email: user.email,
         role: user.role,
         location: user.location,
-        phoneNumber: user.phoneNumber
+        phoneNumber: user.phoneNumber,
+        Speaker: user.Speaker
     }
 }

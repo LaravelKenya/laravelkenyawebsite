@@ -38,12 +38,23 @@ export const useUserSpeakerStore = defineStore("userSpeaker", () => {
         loading.value = pending.value
     }
 
+    const updateUser = async (user: Speaker & { phoneNumber: string, location: string }) => {
+        loading.value = true
+        const {data, pending} = await useApiFetch("/api/users", {
+            method: "PUT",
+            body: user
+        })
+        console.log(data.value)
+        loading.value = false
+    }
+
     return {
         addSpeaker,
         loading,
         users,
         user,
         speaker,
-        getUser
+        getUser,
+        updateUser
     }
 })
