@@ -16,7 +16,7 @@ const activeRoute = (route: string) => {
   <ul class="tw-pb-2 tw-space-y-2">
     <li v-for="(link, i) in links" :key="i">
       <NuxtLink
-          :class="activeRoute(link.href) ? 'tw-bg-gray-200 dark:tw-bg-gray-600' : ''"
+          :class="activeRoute(link.href) ? 'tw-bg-gray-200 dark:tw-bg-gray-600 active' : ''"
           :to="link.href"
           class="tw-flex tw-items-center tw-p-2 tw-text-base tw-text-gray-900 tw-rounded-lg hover:tw-bg-gray-100 group dark:tw-text-gray-200 dark:hover:tw-bg-gray-700">
         <svg

@@ -1,4 +1,4 @@
-import {ChangePassword, LoginDetails, User} from "~/types/types";
+import {ChangePassword, LoginDetails, Speaker, User} from "~/types/types";
 
 export const useAuthStore = defineStore("auth", () => {
     const user = ref<User>({
@@ -39,6 +39,7 @@ export const useAuthStore = defineStore("auth", () => {
         })
         user.value = data.value?.user as User
         loading.value = pending.value
+        await navigateTo("/auth/login")
     }
 
     const logout = async () => {
@@ -49,11 +50,27 @@ export const useAuthStore = defineStore("auth", () => {
     }
 
     const changePassword = async (passwords: ChangePassword) => {
+        const {data, pending} = await useApiFetch("", {
+            body: passwords,
+            method: "post"
+        })
 
     }
 
+    const updateUser = async (user: User, speaker?: Speaker) => {
+        loading.value = true
+        const {data, pending} = await useApiFetch("/api/users", {
+            method: "put",
+            body: {
+                ...user,
+                ...speaker
+            }
+        })
+        loading.value = pending.value
+    }
 
-    return {user, login, register, loading, logout, accessToken, authenticated, changePassword}
+
+    return {user, login, register, loading, logout, accessToken, authenticated, changePassword, updateUser}
 }, {
     persist: true
 })

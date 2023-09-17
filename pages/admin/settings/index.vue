@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import {useAuthStore} from "~/stores/useAuthStore";
-import {ChangePassword, Speaker, User} from "~/types/types";
+import {ChangePassword, User} from "~/types/types";
 
 definePageMeta({
   layout: "admin",
@@ -9,14 +9,7 @@ definePageMeta({
 
 const auth = useAuthStore()
 const user = ref<User>(auth.user)
-const speaker = ref<Speaker>({
-  userId: 0,
-  github: "",
-  linkedIn: "",
-  twitter: "",
-  website: "",
-  bio: ""
-})
+const speaker = ref(auth.user.Speaker)
 
 const password = ref<ChangePassword>({
   currentPassword: '',
@@ -27,6 +20,7 @@ const password = ref<ChangePassword>({
 watch(auth.user, (value, oldValue, onCleanup) => {
   user.value = value
 })
+
 </script>
 
 <template>
@@ -101,11 +95,11 @@ watch(auth.user, (value, oldValue, onCleanup) => {
                   <FormInputComponent v-model="speaker.twitter" label="Twitter" placeholder="Twitter Link"/>
                 </div>
                 <div class="tw-col-span-full sm:tw-col-span-full">
-                  <FormTextAreaComponent v-model="speaker.bio" label="Bio" rows="3"/>
+                  <FormTextAreaComponent v-model="speaker.bio" :rows="3" label="Bio"/>
                 </div>
               </div>
               <div class="tw-col-span-6 sm:tw-col-full tw-mt-4">
-                <FormButtonComponent label="Save All" type="button"/>
+                <FormButtonComponent label="Save All" type="button" @click.prevent="auth.updateUser(user, speaker)"/>
               </div>
             </form>
           </div>
