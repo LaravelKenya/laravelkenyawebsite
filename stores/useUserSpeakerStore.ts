@@ -18,6 +18,7 @@ export const useUserSpeakerStore = defineStore("userSpeaker", () => {
         linkedIn: "",
     })
     const loading = ref<boolean>(false)
+    const speakers = ref<Speaker[]>([])
 
     const addSpeaker = async (speaker: Speaker) => {
         loading.value = true
@@ -48,6 +49,14 @@ export const useUserSpeakerStore = defineStore("userSpeaker", () => {
         loading.value = false
     }
 
+    const getSpeakers = async () => {
+        loading.value = true
+        const {data, pending} = await useApiFetch('/api/speakers')
+        // @ts-ignore
+        speakers.value = data.value?.data as Speaker[]
+        loading.value = pending.value
+    }
+
     return {
         addSpeaker,
         loading,
@@ -55,6 +64,8 @@ export const useUserSpeakerStore = defineStore("userSpeaker", () => {
         user,
         speaker,
         getUser,
-        updateUser
+        updateUser,
+        getSpeakers,
+        speakers
     }
 })

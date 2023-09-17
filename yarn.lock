@@ -659,7 +659,7 @@
   optionalDependencies:
     ipx "^1.2.0"
 
-"@nuxt/kit@^3.2.3", "@nuxt/kit@^3.4.1", "@nuxt/kit@^3.5.0", "@nuxt/kit@^3.5.3", "@nuxt/kit@^3.6.5", "@nuxt/kit@3.6.5":
+"@nuxt/kit@^3.0.0", "@nuxt/kit@^3.2.3", "@nuxt/kit@^3.4.1", "@nuxt/kit@^3.5.0", "@nuxt/kit@^3.5.3", "@nuxt/kit@^3.6.5", "@nuxt/kit@3.6.5":
   version "3.6.5"
   resolved "https://registry.npmjs.org/@nuxt/kit/-/kit-3.6.5.tgz"
   integrity sha512-uBI5I2Zx6sk+vRHU+nBmifwxg/nyXCGZ1g5hUKrUfgv1ZfiKB8JkN5T9iRoduDOaqbwM6XSnEl1ja73iloDcrw==
@@ -5279,6 +5279,13 @@ nuxt-headlessui@^1.1.4:
     "@headlessui/vue" "^1.0.0"
     "@nuxt/kit" "^3.4.1"
     pathe "^1.1.0"
+
+nuxt-icons@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.npmjs.org/nuxt-icons/-/nuxt-icons-3.2.1.tgz"
+  integrity sha512-trvAFq9oWYwWEQ0qZDHVxvLK+TwOdFnoXYOXQvN1CRUlp1DBJdxC8vXO3mED2Kb+Suag+bpWLC6eXGrRwhfffQ==
+  dependencies:
+    "@nuxt/kit" "^3.0.0"
 
 nuxt@^3.6.5:
   version "3.6.5"

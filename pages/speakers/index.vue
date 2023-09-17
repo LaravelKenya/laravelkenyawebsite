@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+
 useSeoMeta({
   title: 'Speakers',
   description: 'All laravel Kenya speakers ',
@@ -11,6 +12,7 @@ useSeoMeta({
 useHead({
   title: "Speakers"
 })
+
 </script>
 
 <template>

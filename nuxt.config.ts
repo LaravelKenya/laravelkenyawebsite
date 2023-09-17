@@ -9,11 +9,12 @@ export default defineNuxtConfig({
         "toastify-js/src/toastify.css"
     ],
     modules: [
-        '@pinia/nuxt',
-        "@nuxt/image",
-        '@nuxtjs/tailwindcss',
-        'nuxt-headlessui',
-        '@pinia-plugin-persistedstate/nuxt',
+      '@pinia/nuxt',
+      "@nuxt/image",
+      '@nuxtjs/tailwindcss',
+      'nuxt-headlessui',
+      '@pinia-plugin-persistedstate/nuxt',
+      'nuxt-icons'
     ],
     pinia: {
         autoImports: [

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import {Speaker} from "~/types/types";
 import {ChevronRightIcon, EyeIcon, HomeIcon} from "@heroicons/vue/20/solid";
+import {useUserSpeakerStore} from "~/stores/useUserSpeakerStore";
 
 useHead({
   title: "Admin / Speakers"
@@ -9,16 +9,8 @@ definePageMeta({
   layout: "admin",
   middleware: "auth"
 })
-const loading = ref<boolean>(false)
-const speakers = ref<Speaker []>([])
-
-const fetchSpeakers = async () => {
-  loading.value = true
-  const {data, pending} = await useApiFetch('/api/speakers')
-  speakers.value = data.value?.data as Speaker[]
-  loading.value = pending.value
-}
-fetchSpeakers()
+const speakersStore = useUserSpeakerStore()
+speakersStore.getSpeakers()
 </script>
 
 <template>
@@ -101,10 +93,11 @@ fetchSpeakers()
                   </th>
                 </tr>
                 </thead>
-                <Loader v-if="loading"/>
+                <Loader v-if="speakersStore.loading"/>
                 <tbody class="tw-bg-white tw-divide-y tw-divide-gray-200 dark:tw-bg-gray-800 dark:tw-divide-gray-700">
 
-                <tr v-for="(speaker, i) in speakers" :key="i" class="hover:tw-bg-gray-100 dark:hover:tw-bg-gray-700">
+                <tr v-for="(speaker, i) in speakersStore.speakers" :key="i"
+                    class="hover:tw-bg-gray-100 dark:hover:tw-bg-gray-700">
                   <td class="tw-w-4 tw-p-4">
                     <div class="tw-flex tw-items-center">
                       <input id="checkbox-194556" aria-describedby="checkbox-1"
