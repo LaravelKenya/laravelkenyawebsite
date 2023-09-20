@@ -35,9 +35,10 @@ const navigationStore = useNavigationStore()
              href="#">
             Yes, I'm sure
           </a>
-          <button class="tw-text-gray-900 tw-bg-white hover:tw-bg-gray-100 focus:tw-ring-4 focus:ring-primary-300 tw-border tw-border-gray-200 tw-font-medium tw-inline-flex tw-items-center tw-rounded-lg tw-text-base tw-px-3 tw-py-2.5 tw-text-center dark:tw-bg-gray-800 dark:tw-text-gray-400 dark:tw-border-gray-600 dark:hover:tw-text-white dark:hover:tw-bg-gray-700 dark:focus:tw-ring-gray-700"
-                  type="button"
-                  @click.prevent="navigationStore.deleteScheduleModal(false)"
+          <button
+              class="tw-text-gray-900 tw-bg-white hover:tw-bg-gray-100 focus:tw-ring-4 focus:ring-primary-300 tw-border tw-border-gray-200 tw-font-medium tw-inline-flex tw-items-center tw-rounded-lg tw-text-base tw-px-3 tw-py-2.5 tw-text-center dark:tw-bg-gray-800 dark:tw-text-gray-400 dark:tw-border-gray-600 dark:hover:tw-text-white dark:hover:tw-bg-gray-700 dark:focus:tw-ring-gray-700"
+              type="button"
+              @click.prevent="navigationStore.deleteScheduleModal(false)"
           >
             No, cancel
           </button>

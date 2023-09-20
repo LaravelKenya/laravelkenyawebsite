@@ -2,16 +2,21 @@
 import {ChevronRightIcon, HomeIcon} from "@heroicons/vue/20/solid";
 import {useEventsStore} from "~/stores/useEventsStore";
 
-definePageMeta({
-  layout: "admin",
-  middleware: "auth"
-})
 const getEventId = () => {
   const route = useRoute()
   return parseInt(<string>route.params.id)
 }
+
 const eventsStore = useEventsStore()
 eventsStore.getEvent(getEventId())
+definePageMeta({
+  layout: "admin",
+  middleware: "auth"
+})
+useHead({
+  title: eventsStore.event.name + " Event",
+})
+
 
 const eventDetails = [
   {

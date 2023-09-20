@@ -7,6 +7,9 @@ definePageMeta({
   layout: "admin",
   middleware: "auth"
 })
+useHead({
+  title: "Admin / Events"
+})
 
 const eventId = ref<number>(0)
 const events = useEventsStore()
