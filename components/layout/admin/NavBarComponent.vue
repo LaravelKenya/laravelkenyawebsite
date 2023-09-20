@@ -73,10 +73,9 @@ const auth = useAuthStore()
             </svg>
           </button>
           <a class="tw-flex tw-ml-2 md:tw-mr-24" href="https://flowbite-admin-dashboard.vercel.app/">
-            <img alt="FlowBite Logo" class="tw-h-8 tw-mr-3"
-                 src="https://flowbite-admin-dashboard.vercel.app/images/logo.svg"/>
+            <NuxtImg alt="Laravel Logo" class="tw-h-8 tw-mr-3" src="/seo/logo.png"/>
             <span
-                class="tw-self-center tw-text-xl tw-font-semibold sm:tw-text-2xl tw-whitespace-nowrap dark:tw-text-white">Flowbite</span>
+                class="tw-self-center tw-text-xl tw-font-semibold sm:tw-text-2xl tw-whitespace-nowrap dark:tw-text-white">Laravel Kenya</span>
           </a>
           <form action="#" class="tw-hidden lg:tw-block lg:tw-pl-3.5" method="GET">
             <label class="tw-sr-only" for="topbar-search">Search</label>

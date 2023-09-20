@@ -112,7 +112,7 @@ const addSchedule = (id: number) => {
                     </div>
                   </td>
                   <td class="tw-p-4 tw-text-base tw-font-medium tw-text-gray-900 tw-whitespace-nowrap dark:tw-text-white">
-                    {{ event.date }}
+                    {{ formatDate(event.date) }}
                   </td>
                   <td class="tw-p-4 tw-text-base tw-font-medium tw-text-gray-900 tw-whitespace-nowrap dark:tw-text-white">
                     {{ event.location }}

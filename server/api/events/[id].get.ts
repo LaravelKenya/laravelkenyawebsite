@@ -12,6 +12,9 @@ export default defineEventHandler(async (event) => {
         return prisma.event.findFirst({
             where: {
                 id: id
+            },
+            include: {
+                schedules: true
             }
         })
     }
