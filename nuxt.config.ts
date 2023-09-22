@@ -9,12 +9,12 @@ export default defineNuxtConfig({
         "toastify-js/src/toastify.css"
     ],
     modules: [
-      '@pinia/nuxt',
-      "@nuxt/image",
-      '@nuxtjs/tailwindcss',
-      'nuxt-headlessui',
-      '@pinia-plugin-persistedstate/nuxt',
-      'nuxt-icons'
+        '@pinia/nuxt',
+        "@nuxt/image",
+        '@nuxtjs/tailwindcss',
+        'nuxt-headlessui',
+        '@pinia-plugin-persistedstate/nuxt',
+        'nuxt-icons'
     ],
     pinia: {
         autoImports: [
@@ -24,6 +24,9 @@ export default defineNuxtConfig({
     runtimeConfig: {
         JWT_ACCESS_TOKEN: "mySecretToken",
         JWT_REFRESH_TOKEN: "mySecretToken"
+    },
+    image: {
+        provider: "netlify"
     }
 
 })
