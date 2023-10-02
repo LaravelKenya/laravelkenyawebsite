@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 useHead({
   title: "Home"
+  
 })
 useSeoMeta({
   title: 'Laravel Kenya',

@@ -4,19 +4,21 @@ const checkIfActive = (path: string) => {
   return route.fullPath === path;
 }
 const links = [
-  {name: "Home", href: "/",},
-  {name: "Schedules", href: "/schedules",},
-  {name: "Speakers", href: "/speakers"},
-  {name: "Blog", href: "/blog"},
-  {name: "Contact", href: "/contact"},
-  {name: "About Us", href: "/about"},
-  {name: "Login", href: "/auth/login"}
+  { name: "Home", href: "/", },
+  { name: "Schedules", href: "/schedules", },
+  // { name: "event_detail", href: "/event_detail", },
+  { name: "Speakers", href: "/speakers" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact", href: "/contact" },
+  { name: "About Us", href: "/about" },
+  { name: "Login", href: "/auth/login" }
 ]
 </script>
 
 <template>
   <ul class="navbar-nav mr-auto w-100 justify-content-end">
-    <li v-for="(link, i) in links" :key="i+link.name" :class="checkIfActive(link.href) ? 'active': ''" class="nav-item">
+    <li v-for="(link, i) in links" :key="i + link.name" :class="checkIfActive(link.href) ? 'active' : ''"
+      class="nav-item">
       <NuxtLink :to="link.href" class="nav-link">
         {{ link.name }}
       </NuxtLink>
