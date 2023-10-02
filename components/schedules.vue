@@ -6,42 +6,39 @@
   <!-- This section is intended to be in the schedules page upto ( check end of this comment) -->
   <!-- Add this CDN link for icons to work (<link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
 )-->
-  <section id="gallery" class="section-padding">
-    <div class="container-fluid">
+
+
+  <!-- The upcoming event section -->
+  <section id="event-up" class="section-padding">
+    <div class="container">
       <div class="row">
         <div class="col-12">
           <div class="section-title-header text-center">
-            <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Event Schedules</h2>
-            <p class="wow fadeInDown" data-wow-delay="0.2s">This is a list of events organized by Laravel Kenya alongside
-              some partners</p>
+            <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Upcoming Events</h2>
+            <p class="wow fadeInDown" data-wow-delay="0.2s">This is a list of upcoming events organized by Laravel Kenya
+              and some of it's partners.</p>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6 col-sm-6 col-lg-3">
-          <div class="gallery-box">
-            <div class="img-thumb">
-              <img class="img-fluid" src="assets/img/gallery/img-1.jpg" alt="">
-            </div>
-            <div class="overlay-box text-center">
-              <a class="lightbox" href="google.com">
-                <i class="lni-plus"></i>
-
-
-
-              </a>
+        <div class="col-lg-3 col-md-6 col-xs-12">
+          <div class="event-item">
+            <img class="img-fluid" src="assets/img/event/img1.jpg" alt="">
+            <!-- These images for the events requrie descriptive posters or we make the event titles static -->
+            <div class="overlay-text">
+              <div class="content">
+                <h3>Business Confrence</h3>
+                <a href="#">View details</a>
+              </div>
             </div>
           </div>
         </div>
 
       </div>
-      <div class="row justify-content-center mt-3">
-        <div class="col-xs-12">
-          <a href="#" class="btn btn-common">Browse All</a>
-        </div>
-      </div>
+
     </div>
   </section>
+  <!-- End upcoming event section -->
 
   <!-- This is intended to be the end of the schedules page -->
 
