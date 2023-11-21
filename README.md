@@ -68,12 +68,15 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://kemboi22.netlify.com"><img src="https://avatars.githubusercontent.com/u/85908528?v=4?s=100" width="100px;" alt="Kemboi Elvis"/><br /><sub><b>Kemboi Elvis</b></sub></a><br /><a href="#code-kemboi22" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
-
-
-[![All Contributors](https://img.shields.io/github/all-contributors/LaravelKenya/laravelkenyawebsite?color=ee8449&style=flat-square)](#contributors)
-
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
