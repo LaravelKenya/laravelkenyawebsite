@@ -1,4 +1,21 @@
 {
   "projectName": "laravelkenyawebsite",
-  "projectOwner": "LaravelKenya"
+  "projectOwner": "LaravelKenya",
+  "files": [
+    "README.md"
+  ],
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributorsPerLine": 7,
+  "contributors": [
+    {
+      "login": "kemboi22",
+      "name": "Kemboi Elvis",
+      "avatar_url": "https://avatars.githubusercontent.com/u/85908528?v=4",
+      "profile": "https://kemboi22.netlify.com",
+      "contributions": [
+        "code"
+      ]
+    }
+  ]
 }
