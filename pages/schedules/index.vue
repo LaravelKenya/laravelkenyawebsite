@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 useHead({
-  title: "Schedules"
+  title: "Laravel Kenya Community Schedules"
 })
 useSeoMeta({
   title: 'Schedules',
